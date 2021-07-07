@@ -39,39 +39,3 @@ a {
 address {
   font-style: normal;
 }
-
-$dark-font: rgb(24, 51, 121);
-
-@mixin bg-solid($theme) {
-  @if $theme == light {
-    background-image: linear-gradient(
-      to bottom,
-      rgb(190, 190, 190),
-      rgb(220, 220, 220),
-      rgb(240, 240, 240),
-      rgb(220, 220, 220),
-      rgb(190, 190, 190),
-      rgb(170, 170, 170),
-      rgb(150, 150, 150)
-    );
-  } @else {
-    background-image: linear-gradient(
-      to bottom,
-      rgb(25, 51, 114),
-      rgb(41, 68, 135),
-      rgb(69, 98, 174),
-      rgb(56, 79, 143),
-      rgb(40, 64, 126),
-      rgb(35, 59, 119),
-      rgb(24, 46, 104)
-    );
-  }
-}
-
-.bg-light {
-  @include bg-solid(light);
-}
-
-.bg-dark {
-  @include bg-solid(dark);
-}
