@@ -1,0 +1,77 @@
+@mixin importFont($font-family, $pathName) {
+  @font-face {
+    font-family: $font-family;
+    src: url($pathName);
+  }
+}
+
+@include importFont(
+  "Blinker-reg",
+  "../public/fonts/Blinker/Blinker-Regular.ttf"
+);
+@include importFont(
+  "Blinker-thin",
+  "../public/fonts/Blinker/Blinker-Light.ttf"
+);
+@include importFont("Blinker-Bold", "../public/fonts/Blinker/Blinker-Bold.ttf");
+
+html,
+body {
+  font-family: "Blinker-reg", -apple-system, BlinkMacSystemFont, Segoe UI,
+    Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue,
+    sans-serif;
+  height: 100%;
+  width: 100%;
+}
+
+a {
+  text-decoration: none;
+  color: rgb(75, 75, 75);
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  list-style: none;
+}
+
+address {
+  font-style: normal;
+}
+
+$dark-font: rgb(24, 51, 121);
+
+@mixin bg-solid($theme) {
+  @if $theme == light {
+    background-image: linear-gradient(
+      to bottom,
+      rgb(190, 190, 190),
+      rgb(220, 220, 220),
+      rgb(240, 240, 240),
+      rgb(220, 220, 220),
+      rgb(190, 190, 190),
+      rgb(170, 170, 170),
+      rgb(150, 150, 150)
+    );
+  } @else {
+    background-image: linear-gradient(
+      to bottom,
+      rgb(25, 51, 114),
+      rgb(41, 68, 135),
+      rgb(69, 98, 174),
+      rgb(56, 79, 143),
+      rgb(40, 64, 126),
+      rgb(35, 59, 119),
+      rgb(24, 46, 104)
+    );
+  }
+}
+
+.bg-light {
+  @include bg-solid(light);
+}
+
+.bg-dark {
+  @include bg-solid(dark);
+}
