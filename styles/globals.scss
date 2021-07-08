@@ -1,3 +1,5 @@
+@import "./gradients";
+
 @mixin importFont($font-family, $pathName) {
   @font-face {
     font-family: $font-family;
@@ -24,6 +26,10 @@ body {
   width: 100%;
 }
 
+body {
+  position: relative;
+}
+
 a {
   text-decoration: none;
   color: rgb(75, 75, 75);
@@ -38,4 +44,59 @@ a {
 
 address {
   font-style: normal;
+}
+
+.bg-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.light-bg-image,
+.dark-bg-image {
+  background-size: 10%;
+}
+
+.light-bg-image {
+  background-image: url("../public/imgs/bg_light.png");
+}
+
+.dark-bg-image {
+  background-image: url("../public/imgs/bg_dark.png");
+}
+
+.light-bg-glass {
+  @include gradient(light, translucent);
+}
+
+.dark-bg-glass {
+  @include gradient(dark, translucent);
+}
+
+.light-shadow {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.dark-shadow {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.9);
+}
+
+.light-card {
+  @include gradient(light, opaque);
+  padding: $xs;
+}
+
+.dark-card {
+  @include gradient(dark, opaque);
+  padding: $xs;
+}
+
+.nav-open {
+  transform: translateY(0%);
+}
+
+.nav-closed {
+  transform: translateY(-100%);
 }

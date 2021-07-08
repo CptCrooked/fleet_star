@@ -1,0 +1,30 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: $sm;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+
+  & a > div {
+    display: block !important;
+  }
+}
+
+.logoBckgnd {
+  border-radius: 4px;
+}
+
+.menuBtn {
+  position: fixed;
+  top: $sm;
+  right: $sm;
+  display: block;
+  height: 45px;
+  width: 45px;
+  border: none;
+  border-radius: 4px;
+  z-index: 10;
+}
